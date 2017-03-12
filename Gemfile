@@ -57,5 +57,6 @@ group :development do
   gem 'ransack'
   gem 'kaminari'
   gem 'kaminari-bootstrap'
+  gem 'ckeditor'
 end
 
