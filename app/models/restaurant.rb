@@ -3,7 +3,9 @@ class Restaurant < ActiveRecord::Base
     has_many :genres, through: :restaurant_genres
     has_many :restaurant_images, dependent: :destroy
     has_many :reviews, dependent: :destroy
+    has_one :detail, dependent: :destroy
     accepts_nested_attributes_for :restaurant_images
+    accepts_nested_attributes_for :detail
     
     geocoded_by :address
     after_validation :geocode

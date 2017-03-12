@@ -19,10 +19,17 @@ class RestaurantsController < ApplicationController
         @review = Review.new
       end
     end
+    
+    if user_signed_in?
+      if @restaurant.detail == nil
+        @detail = Detail.new
+      end
+    end
   end
 
   def new
     @restaurant = Restaurant.new
+    @restaurant.build_detail
     5.times do
       @restaurant.restaurant_images.build
     end
@@ -44,6 +51,7 @@ class RestaurantsController < ApplicationController
     else
       @restaurant = Restaurant.new(input_params)
       @restaurant.user_id = current_user.id
+
       if @restaurant.invalid?
         flash.now[:alert] = @restaurant.errors.full_messages
         render :new
@@ -63,6 +71,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(input_params)
+    p @restrant
     @restaurant.user_id = current_user.id
     if params[:back]
       render :new
@@ -98,6 +107,6 @@ class RestaurantsController < ApplicationController
 
   private
   def input_params
-    params.require(:restaurant).permit(:name, :telephone_number, :address, :has_private_room, :seat_count, :open_date, genre_ids: [], restaurant_images_attributes: [:id, :image, :image_cache])
+    params.require(:restaurant).permit(:name, :telephone_number, :address, :has_private_room, :seat_count, :open_date, genre_ids: [], restaurant_images_attributes: [:id, :image, :image_cache], detail_attributes: [:id, :body])
   end
 end

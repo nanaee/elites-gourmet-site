@@ -13,6 +13,9 @@
     <div>
       <div class="genres">
         <%= render 'restaurants/genre_list', restaurant: restaurant %>
+        <div>
+          <%= raw restaurant.detail.body.truncate(50) if restaurant.detail %>
+        </div>
       </div>
     </div>
   </div>

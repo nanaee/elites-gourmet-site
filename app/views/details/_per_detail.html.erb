@@ -1,0 +1,23 @@
+<div class="detail clearfix">
+  <div class="thumbnail">
+    <% if detail.user.thumbnail? %>
+      <%= image_tag detail.user.thumbnail.url %>
+    <% else %>
+      <div class="no_thumbnail"></div>
+    <% end %>
+  </div>
+  <div class="detail_contents">
+    <div class="detail_header clearfix">
+      <%= detail.user.name %>
+
+      <% if user_signed_in? && detail.user.id == current_user.id %>
+        <div class="delete">
+          <%= button_to '削除', detail_path(detail.id), method: :delete, class: 'btn btn-danger', data: {confirm: '削除してよろしいですか？'} %>
+        </div>
+      <% end %>
+    </div>
+    <div class="detail_body">
+      <%= raw detail.body %>
+    </div>
+  </div>
+</div>
