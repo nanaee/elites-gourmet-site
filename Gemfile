@@ -54,5 +54,8 @@ group :development do
   gem 'seed-fu'
   gem 'gmaps4rails'
   gem 'geocoder'
+  gem 'ransack'
+  gem 'kaminari'
+  gem 'kaminari-bootstrap'
 end
 
