@@ -14,7 +14,7 @@
       <div class="genres">
         <%= render 'restaurants/genre_list', restaurant: restaurant %>
         <div>
-          <%= raw restaurant.detail.body.truncate(50) if restaurant.detail %>
+          <%= raw restaurant.detail.truncate(50) %>
         </div>
       </div>
     </div>

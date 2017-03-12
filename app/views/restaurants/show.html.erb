@@ -39,9 +39,8 @@
 <!---->
 
       <div class="detail_list">
-        <% if @restaurant.detail %>
-          <%= render 'details/per_detail', detail: @restaurant.detail %>
-        <% end %>
+        <h4>店舗紹介</h4>
+        <%= raw @restaurant.detail %>
       </div>
 
 <!---->

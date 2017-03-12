@@ -8,6 +8,13 @@
         <td><%= @restaurant.name %></td>
         <%= f.hidden_field :name %>
       </tr>
+      
+      <tr>
+        <th style="width:100px"><%= f.label :detail %></th>
+        <td><%= @restaurant.detail %></td>
+        <%= f.hidden_field :detail %>
+      </tr>
+      
       <tr>
         <th><%= f.label :telephone_number %></th>
         <td><%= @restaurant.telephone_number %></td>

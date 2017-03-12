@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
   
   resources :reviews, only: [:create, :destroy]
-  resources :details, only: [:create, :destroy]
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
