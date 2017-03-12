@@ -51,5 +51,8 @@ group :development do
   gem 'devise'
   gem 'carrierwave'
   gem 'twitter-bootstrap-rails'
+  gem 'seed-fu'
+  gem 'gmaps4rails'
+  gem 'geocoder'
 end
 
