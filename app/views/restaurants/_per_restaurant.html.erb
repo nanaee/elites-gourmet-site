@@ -14,7 +14,7 @@
       <div class="genres">
         <%= render 'restaurants/genre_list', restaurant: restaurant %>
         <div>
-          <%= raw restaurant.detail.truncate(50) %>
+          <%= strip_tags restaurant.detail.truncate(50) %>
         </div>
       </div>
     </div>
