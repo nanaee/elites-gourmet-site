@@ -4,7 +4,8 @@ class Restaurant < ActiveRecord::Base
     has_many :restaurant_images, dependent: :destroy
     has_many :reviews, dependent: :destroy
     accepts_nested_attributes_for :restaurant_images
-    
+    belongs_to :user
+
     geocoded_by :address
     after_validation :geocode
     

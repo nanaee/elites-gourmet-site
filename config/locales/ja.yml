@@ -10,6 +10,7 @@ ja:
         seat_count: '席数'
         open_date: 'オープン日'
         image: '画像'
+        detail: '店舗紹介'
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
@@ -222,3 +223,7 @@ ja:
   review:
     created: 'レビューを追加しました。'
     deleted: 'レビューを削除しました。'
+    
+  detail:
+    created: '店舗紹介を追加しました。'
+    deleted: '店舗紹介を削除しました。'

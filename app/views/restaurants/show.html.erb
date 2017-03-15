@@ -19,7 +19,7 @@
     <% end %>
   </div>
 
-  <div class="clearfix">
+  <div class="row">
     <div class="col-md-5">
       <div class="big_image">
         <%= image_tag @restaurant.restaurant_images.first.image.url, id: 'big_image' %>
@@ -36,6 +36,14 @@
       </ul>
     </div>
     <div class="col-md-7 info">
+<!---->
+
+      <div class="detail_list">
+        <h4>店舗紹介</h4>
+        <%= raw @restaurant.detail %>
+      </div>
+
+<!---->
       <div>
         <%= label :restaurant, :telephone_number %><%= @restaurant.telephone_number %>
       </div>
@@ -58,8 +66,8 @@
       <div>
         <%= label :restaurant, :open_date %><%= @restaurant.open_date %>
       </div>
-    </div>
-  </div>
+    </div><!-- /.col-md-7 -->
+  </div><!-- /.row -->
   
   <% if user_signed_in? %>
     <div class="my_review_wrapper">
